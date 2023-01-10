@@ -16,17 +16,20 @@ class MainActivity : AppCompatActivity() {
         val btn2 = findViewById<Button>(R.id.btnFragment2)
          supportFragmentManager.beginTransaction().apply {
              replace(R.id.flFragment,firstFragment)
+
              commit()
          }
         btn1.setOnClickListener{
             supportFragmentManager.beginTransaction().apply{
                 replace(R.id.flFragment,firstFragment)
+                addToBackStack(null)
                 commit()
             }
         }
         btn2.setOnClickListener{
             supportFragmentManager.beginTransaction().apply {
                 replace(R.id.flFragment,secondFragment)
+                addToBackStack(null)
                 commit()
             }
         }
